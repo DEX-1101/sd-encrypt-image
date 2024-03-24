@@ -15,6 +15,7 @@ from gradio import Blocks
 from fastapi import FastAPI, Request, Response
 import sys
 from urllib.parse import unquote
+from colorama import Fore, Back, Style
 
 repo_dir = md_scripts.basedir()
 password = getattr(shared.cmd_opts, 'encrypt_pass', None)
@@ -200,9 +201,9 @@ if PILImage.Image.__name__ != 'EncryptedImage':
         
 if password:
     script_callbacks.on_app_started(app_started_callback)
-    print('图片加密已经启动 加密方式 2')
+    print(f'{Fore.GREEN}[-] Image Encryption started.{Style.RESET_ALL}')
     if not api_enable:
-        print('请添加启动参数 --api，否则不能正常查看图片')
+        print(f'{Fore.RED}[-] Add --api to your args to view the image result after generation.{Style.RESET_ALL}')
 
 else:
-    print('图片加密插件已安装，但缺少密码参数未启动')
+    print(f'{Fore.RED}[-] Image Encryption DISABLED.{Style.RESET_ALL}')
