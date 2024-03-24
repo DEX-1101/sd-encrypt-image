@@ -26,10 +26,10 @@ onUiUpdate(function () {
     info.innerHTML = `
 <span>${
       isEnable
-        ? "图片加密插件已经启用，图片将加密保存在服务器"
-        : "图片加密插件已安装但未启用"
+        ? "Image Encryption has been enabled, any images will be encrypted."
+        : "Image Encryption extension is installed but not enabled."
     }。
-<a rel="noopener noreferrer" target="_blank" href="https://github.com/viyiviyi/sd-encrypt-image">点击查看插件主页</a>
+<a rel="noopener noreferrer" target="_blank" href="https://github.com/viyiviyi/sd-encrypt-image">homepage</a>
 </span>
 `;
   }
